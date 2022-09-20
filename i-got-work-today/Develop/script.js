@@ -18,7 +18,14 @@ setTime = () => {
 };
 
 resetBtn = () => {
-    const resetBtn = 
-}
+    const resetBtn = $(".clear-btn");
+    resetBtn.on("click", function () {
+        localStorage.clear();
+        for (let i = 0; i < $(".description").length; i++) {
+            $(".description").val('');
+        };
+    });
+};
 
 getTime();
+setTime();
