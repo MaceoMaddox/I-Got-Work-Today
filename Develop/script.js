@@ -1,6 +1,6 @@
 getTime = () => {
     const today = moment();
-    $("currentDay").text(today.format("LLLL"));
+    $("#currentDay").text(today.format("LLLL"));
 };
 
 getLocalStorage = () => {
