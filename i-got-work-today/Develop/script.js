@@ -11,6 +11,17 @@ getLocalStorage = () => {
     };
 };
 
+clickIt = () => {
+    const saveBtnEl = $(".saveBtn");
+    saveBtnEl.on("click", function () {
+        const button = $(this);
+        const descriptionEl = button.closest(".row").find(".description");
+        const descriptionText = descriptionEl.val();
+        const dataAttr = descriptionEl.attr("data-id");
+        localStorage.setItem(`${dataId}`, descriptionText);
+    });
+};
+
 setTime = () => {
     $(".description").each(function () {
         var dataId = $(this).attr("data-id");
@@ -22,7 +33,7 @@ setTime = () => {
         } else {
             $(this).addClass("future");
         };
-    };
+    });
 };
 
 resetBtn = () => {
@@ -36,6 +47,6 @@ resetBtn = () => {
 };
 
 getTime();
+getLocalStorage();
 setTime();
 resetBtn();
-getLocalStorage();
