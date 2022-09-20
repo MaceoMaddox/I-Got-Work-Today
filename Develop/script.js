@@ -18,7 +18,7 @@ clickIt = () => {
         const descriptionEl = button.closest(".row").find(".description");
         const descriptionText = descriptionEl.val();
         const dataAttr = descriptionEl.attr("data-id");
-        localStorage.setItem(`${dataId}`, descriptionText);
+        localStorage.setItem(`${dataAttr}`, descriptionText);
     });
 };
 
@@ -48,5 +48,6 @@ resetBtn = () => {
 
 getTime();
 getLocalStorage();
+clickIt();
 setTime();
 resetBtn();
