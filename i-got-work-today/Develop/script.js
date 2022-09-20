@@ -17,6 +17,8 @@ setTime = () => {
     }
 };
 
-
+resetBtn = () => {
+    const resetBtn = 
+}
 
 getTime();
