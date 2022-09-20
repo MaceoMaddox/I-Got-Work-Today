@@ -3,6 +3,14 @@ getTime = () => {
     $("currentDay").text(today.format("LLLL"));
 };
 
+getLocalStorage = () => {
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        const description = localStorage.getItem(key);
+        $(`input[data-id=${key}]`).val(description);
+    };
+};
+
 setTime = () => {
     $(".description").each(function () {
         var dataId = $(this).attr("data-id");
@@ -13,8 +21,8 @@ setTime = () => {
             $(this).addClass("present");
         } else {
             $(this).addClass("future");
-        }
-    }
+        };
+    };
 };
 
 resetBtn = () => {
@@ -29,3 +37,5 @@ resetBtn = () => {
 
 getTime();
 setTime();
+resetBtn();
+getLocalStorage();
